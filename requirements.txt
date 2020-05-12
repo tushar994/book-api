@@ -1,0 +1,5 @@
+flask
+flask_wtf
+Faker==0.7.11
+Flask-SQLAlchemy==2.2
+gunicorn

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <a href={{ url_for("index") }}>log out</a>
+
+    <h1>title: {{book.name}}</h1>
+    <h1>ISBN: {{book.ISBN}}</h1>
+    <h1>author: {{book.author}}</h1>
+    <h1>year : {{book.year}}</h1>
+    <h1>average rating : {{average}}</h1>
+
+    <form action={{ url_for('book' , b = book.ISBN )}} method="post">
+        <p>comment:</p>
+        <input type="text" name="comment" id="comment">
+        <br>
+        <p>rating:</p>
+        <input type="text" name="rating" id="rating">
+        <button type="submit">submit</button>
+    </form>
+
+    {% for review in reviews %}
+        <h2>{{review.Review_writer}}</h2><br>
+        <p>{{review.comment}}</p><br>
+        <p>{{review.rating}}</p>
+    {%endfor%}
+    
+</body>
+</html>
